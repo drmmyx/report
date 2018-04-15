@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- (C) 2013-present  SheetJS http://sheetjs.com -->
+<!-- vim: set ts=2: -->
+<html>
+<head>
+<title>SheetJS JS-XLSX In-Browser HTML Table Export Demo</title>
+<meta charset="utf-8" />
+<style>
+.xport, .btn {
+	display: inline;
+	text-align:center;
+}
+a { text-decoration: none }
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.8/shim.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.8/xlsx.full.min.js"></script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blob-polyfill/2.0.20171115/Blob.js"></script>
+<script type="text/javascript" src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>
+
+<button onclick="k2sReportGenerate()">k2s generate Button</button>
+<button onclick="k2sReportGenerate()">Button prepare for epam</button>
+
+
+
+<div id="container"></div>
+
+
+
+<div id style="margin: 20px;">
+	<p id="xportxlsx" class="xport"><input type="submit" value="Export to XLSX!" onclick="doit('xlsx');"></p>
+
+</div>
+
+<script type = 'text/javascript' src='report.js'></script>
+<script type = 'text/javascript' src='https://www.google-analytics.com/ga.js'></script>
+</body>
+</html>
