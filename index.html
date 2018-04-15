@@ -3,50 +3,57 @@
 <!-- vim: set ts=2: -->
 <html>
 <head>
-<title>SheetJS JS-XLSX In-Browser HTML Table Export Demo</title>
+<title>Report Generator</title>
 <meta charset="utf-8" />
-<style>
-.xport, .btn {
-	display: inline;
-	text-align:center;
-}
-a { text-decoration: none }
-table {
-    border-collapse: collapse;
-}
 
-table, th, td {
-    border: 1px solid black;
-}
-</style>
+
+
+
+<style>
+    .xport, .btn {
+        display: inline;
+        text-align:center;
+    }
+    a { text-decoration: none }
+    #data-table, #data-table th, #data-table td { border: 1px solid black }
+    </style>
+
+<link href="bower_components\bootstrap\dist\css\bootstrap.min.css" rel="stylesheet">
+
+
+
 </head>
 <body>
 
-<script type="text/javascript" src="shim.min.js"></script>
+<div class ="container">
+    <div class ="row">
+        <div class = "col-sm-2">
+            <select  class="form-control form-control-sm"  data-bind="options: reportList, optionsText: 'name',  value: selectedReport"></select>
+        </div>
+        <div class = "col-sm-2">
+            <button type="button" class="btn btn-primary" data-bind="click: dataGen">Show Report</button>
+    
+        </div>
+    </div>
+    <div class="row">
+        <div id = "showTable"></div>
+    </div>
 
-<!--script type = 'text/javascript' src='https://www.google-analytics.com/ga.js'></script-->
-<!--script type="text/javascript" src="xlsx.full.min.js"></script-->
+    <div class="row">
+            <button type="button" class="btn btn-primary" data-bind="click: downloadFile">Dowload</button>
+    </div>
+
+
+
+</div>
+
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/knockout/dist/knockout.js"></script>
 <script src="filesaver.js"></script>
 <script src="bower_components/js-xlsx/dist/shim.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
 <script src="Blob.js"></script>
-
-<button onclick="k2sReportGenerate()">k2s generate Button</button>
-<button onclick="k2sReportGenerate()">Button prepare for epam</button>
-
-
-
-<div id="container"></div>
-
-
-
-<div id style="margin: 20px;">
-	<p id="xportxlsx" class="xport"><input type="submit" value="Export to XLSX!" onclick="doit('xlsx');"></p>
-
-</div>
-
 <script type = 'text/javascript' src='report.js'></script>
 </body>
 </html>

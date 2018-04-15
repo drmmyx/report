@@ -1,3 +1,22 @@
+function reportData(name, http) {
+    var self = this;
+    self.name = name;
+    self.link = http;
+}
+
+
+function reportViewModel(){
+
+    this.reportList = ko.observableArray([
+        new reportData("k2s", "http://47.88.132.185/api/v2/k2s_report" ),
+        new reportData("Pam", "http://47.88.132.185/api/v2/k2s_report" ),
+    ]);
+
+
+    var selectedReport = ko.observable('');
+    this.selectedReport = selectedReport();
+
+
 function doit(type, fn, dl) {
 	var elt = document.getElementById('data-table');
     var wb = XLSX.utils.table_to_book(elt, {sheet:"asdas"});
@@ -15,11 +34,10 @@ function doit(type, fn, dl) {
 function generateTable(data , fn){
     var ws = XLSX.utils.json_to_sheet(data);
     console.log(ws);
-   
     var temp = formatData(ws);
-
     var html_string = XLSX.utils.sheet_to_html(temp, { id: "data-table", editable: true });
-    document.getElementById("container").innerHTML = html_string;
+    document.getElementById("showTable").innerHTML = html_string;
+    document.getElementById("data-table").classList.add('.table-striped');
 };
 
 
@@ -110,3 +128,16 @@ function k2sReportGenerate(){
         console.log("i lose");
     } 
   }); }
+
+
+  this.dataGen = function() {
+    return k2sReportGenerate();
+};
+
+this.downloadFile= function(){return doit() };
+
+}
+
+
+
+ko.applyBindings(new reportViewModel());
