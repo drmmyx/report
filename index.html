@@ -21,12 +21,17 @@ table, th, td {
 </style>
 </head>
 <body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.8/shim.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.12.8/xlsx.full.min.js"></script>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blob-polyfill/2.0.20171115/Blob.js"></script>
-<script type="text/javascript" src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.js"></script>
+<script type="text/javascript" src="shim.min.js"></script>
+
+<!--script type = 'text/javascript' src='https://www.google-analytics.com/ga.js'></script-->
+<!--script type="text/javascript" src="xlsx.full.min.js"></script-->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/knockout/dist/knockout.js"></script>
+<script src="filesaver.js"></script>
+<script src="bower_components/js-xlsx/dist/shim.min.js"></script>
+<script src="bower_components/js-xlsx/dist/xlsx.full.min.js"></script>
+<script src="Blob.js"></script>
 
 <button onclick="k2sReportGenerate()">k2s generate Button</button>
 <button onclick="k2sReportGenerate()">Button prepare for epam</button>
@@ -43,6 +48,5 @@ table, th, td {
 </div>
 
 <script type = 'text/javascript' src='report.js'></script>
-<script type = 'text/javascript' src='https://www.google-analytics.com/ga.js'></script>
 </body>
 </html>
